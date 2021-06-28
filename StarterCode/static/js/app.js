@@ -21,7 +21,8 @@ data.forEach(function(event) {
 
 function sort() {
 
-    var input = document.getElementById("form-control");
+    var input = document.getElementById("datetime");
+    console.log(input);
     var filter = input.value.toUpperCase();
     var table = document.getElementById("ufo-table");
     var tr = table.getElementsByTagName("tr");
