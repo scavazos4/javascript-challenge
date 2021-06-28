@@ -9,33 +9,6 @@ data.forEach(function(event) {
   console.log(event);
 });
 
-// // // Step 2:
-// data.forEach(function() {
-//   var row = tbody.append("tr");
-// });
-
-// // Step 3: 
-// data.forEach(function(event) {
-
-//  var row = tbody.append("tr");
-
-//   Object.entries(event).forEach(function([key, value]) {
-//     console.log(key, value);
-//  });
-// });
-
-// Step 4: 
-// data.forEach(function(event) {
-//     console.log(event);
-//     var row = tbody.append("tr");
-  
-//     Object.entries(event).forEach(function([key, value]) {
-//       console.log(key, value);
-//       var cell = row.append("td");
-//     });
-//   });
-
-  // Step 5:
 data.forEach(function(event) {
     console.log(event);
     var row = tbody.append("tr");
@@ -45,3 +18,22 @@ data.forEach(function(event) {
       cell.text(value);
     });
   });
+
+function sort() {
+
+    var input = document.getElementById("form-control");
+    var filter = input.value.toUpperCase();
+    var table = document.getElementById("ufo-table");
+    var tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+}
+    }
+}
