@@ -37,3 +37,4 @@ function sort() {
 }
     }
 }
+d3.selectAll("#filter-btn").on("click", sort);
